@@ -4,17 +4,19 @@ def frequencySort(s):
     :rtype: str
     """
     num = {}
+    r_str=''
     for i, v in enumerate(s):
         if v not in num:
             num[v] = 1
         else:
             num[v] += 1
-    temp = {value: key for key, value in num.items()}
-    values_list = temp.values
-    values_list.sort(reverse=True)
-    r_str = ''
-    for v in values_list:
-        r_str += temp[v] * int(v)
+
+    T_v_list=sorted(num.items(),key=lambda item:item[1],reverse=True)
+
+    for k,v in T_v_list:
+        r_str+=k*v
+
+
     return r_str
 
-print(frequencySort('tree'))
+print(frequencySort('treessstdfasd'))
